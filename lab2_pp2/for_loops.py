@@ -20,5 +20,3 @@ for x in fruits:
     if x == "banana":
         break
     print(x)
-#task5
-
