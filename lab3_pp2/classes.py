@@ -17,26 +17,25 @@ string.printString()
 
 #task2
 class Shape:
-    def __init__(self):
-        pass
-
+    def __init__(self, length=0):
+        self.length = length
+        
     def area(self):
-        return 0 
+        return self.length
 
 class Square(Shape):
-    def __init__(self, length):
-        super().__init__()
-        self.length = length
+    def __init__(self, length=0):
+        super().__init__(length)
 
     def area(self):
         return self.length * self.length
 
-
-shape = Shape()
+shape = Shape(5)
 print("shape:", shape.area())
 
-square = Square(5)
+square = Square(4)
 print("square:", square.area())
+
 
 
 #tack3
