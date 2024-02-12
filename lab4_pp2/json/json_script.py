@@ -1,7 +1,5 @@
 import json
 
-
-# Чтение данных из JSON-файла с использованием pathlib.Path
 with open("sample_data.json", "r") as my_file:
     json_string = my_file.read()
 

@@ -84,9 +84,7 @@ print(replace_with_colon(text))
 
 #task7
 def snake_to_camel(snake_case):
-    words = snake_case.split('_')
-    camel_case = words[0] + ''.join(word.capitalize() for word in words[1:])
-    return camel_case
+    return re.sub(r'_([a-z])', lambda x: x.group(1).upper(), snake_case)
 
 snake = "hello_world_example"
 camel_case = snake_to_camel(snake)
@@ -100,7 +98,25 @@ def split_at_uppercase(input_string):
     return result
 
 
-cnt = "SplitThisStringAtUppercaseLetters"
-res = split_at_uppercase(cnt)
+#task9
+def capital_letters(input_string):
+    res = re.sub(r'([a-z])([A-Z])', r'\1 \2', input_string)
+    return res
 
-print(f"Resulting list: {res}")
+
+cnt = "SplitThisStringAtUppercaseLetters"
+
+print(f"Resulting list: {split_at_uppercase(cnt)}\nResult string: {capital_letters(cnt)}")
+
+
+#task10
+def camel_to_snake(camel_case):
+    res = re.sub(r'([a-z])([A-Z])', r'\1_\2', camel_case)
+    return res.lower()
+
+camel = "helloWorldExample"
+snake_case = camel_to_snake(camel)
+
+print(f"Camel case: {snake_case}")
+
+
